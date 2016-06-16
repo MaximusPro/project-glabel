@@ -20,4 +20,4 @@ glabel [prefix1] "Argument1" [prefix2] "Argement2" ...
 	-ca	Categories in the Main Menu. If several keywords they need to share with a ";".
 	-d	Do not display the icon in the Main Menu(true/false).
 	-pf	Indicates the path of file.
---version Version program.
+	--version Version program.
