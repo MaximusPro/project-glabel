@@ -3,9 +3,9 @@
 glabel - is program of creating label for Linux operation systems.
 
 #Manual
-For install glabel:
-1. Extracting files in folder and a terminal go to the current folder.
-2. Follow command in terminal <strong>sh install.sh</strong>
+For install glabel:<br>
+1. Extracting files in folder and a terminal go to the current folder.<br>
+2. Follow command in terminal <strong>sh install.sh</strong><br>
 glabel [prefix1] "Argument1" [prefix2] "Argement2" ...
 
 	-n	Indicates the file name.
