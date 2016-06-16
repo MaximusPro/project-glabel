@@ -14,7 +14,7 @@ glabel [prefix1] "Argument1" [prefix2] "Argement2" ...
 	-te	Starting program in terminal(true/false)(Default false).
 	-ty	Type file(Default Application).
 	-i	Full Path to the icon file.
-	-ca	Categories in the Main Menu.
-	-d	Do not display the icon in the Main Menu.
+	-ca	Categories in the Main Menu. If several keywords they need to share with a ";".
+	-d	Do not display the icon in the Main Menu(true/false).
 	-pf	Indicates the path of file.
-	--version Version program.
+--version Version program.
