@@ -1,4 +1,4 @@
-# project-glabel
+# Project-glabel
 
 glabel - is program of creating label for Linux operation systems.
 
