@@ -1,0 +1,16 @@
+##############		MANUAL		#####################
+glabel [prefix1] "Argument1" [prefix2] "Argement2" ...
+
+	-n	Indicates the file name.
+	-p	The path to the folder where the executable file.
+	-e	The path to the executable file.You can use commands to the full path to the file.
+	-gn	Generic name (Default name file).
+	-c	Comments to program.
+	-k	Keywords. If several keywords they need to share with a ";". 
+	-te	Starting program in terminal(true/false)(Default false).
+	-ty	Type file(Default Application).
+	-i	Full Path to the icon file.
+	-ca	Categories in the Main Menu.
+	-d	Do not display the icon in the Main Menu.
+	-pf	Indicates the path of file.
+	--version Version program.
