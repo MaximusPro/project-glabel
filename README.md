@@ -21,3 +21,4 @@ glabel [prefix1] "Argument1" [prefix2] "Argement2" ...
 	<br>-d	        Do not display the icon in the Main Menu(true/false).
 	<br>-pf	        Indicates the path of file.
 	<br>--version   Version program.
+	<br>--man   	Open Manual.
