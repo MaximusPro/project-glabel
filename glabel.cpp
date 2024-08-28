@@ -1,4 +1,4 @@
-//version 0.9
+//version 0.9-2
 
 #include <stdio.h>
 #include <cstring>
@@ -10,7 +10,7 @@ using namespace std;
 
 char* NAME;
 
-#define VERSION "0.9"
+#define VERSION "0.9-2"
 
 int quots(char* str)
 {
@@ -180,6 +180,7 @@ int main(int argc, char* argv[])
     char *NameFile = new char[100];
     char *FullPath = new char[200];
     if(PathToFile != NULL) strcat(FullPath, PathToFile);
+    strcat(FullPath, "/");
     strcat(FullPath, Name);
     strcat(FullPath, ".desktop");
     strcat(NameFile, Name);
@@ -213,7 +214,7 @@ int main(int argc, char* argv[])
 	else 
 	{
 		printf("NameFile = %s\n", NameFile);
-		printf("Saved in %s\n", PathToFile);
+		
 		/*for(int i = 0; i < index+1; i++)
 	    {
 		Path.push_back(&NameFile[i]);
@@ -222,6 +223,8 @@ int main(int argc, char* argv[])
 		NameFile = FullPath;
 	}
 	FILE* File = fopen(NameFile, "w");
+    if(File != nullptr)
+    {
     fprintf(File, "[Desktop Entry]\n");
     fprintf(File, "Name=%s\n", Name);
     fprintf(File, "Comment=%s\n", Comment);
@@ -235,9 +238,13 @@ int main(int argc, char* argv[])
     fprintf(File, "Categories=%s\n", Categories);
     fprintf(File, "NoDisplay=%s\n", NoDisplay);
     fclose(File);
-	string Command("chmod a+x ");
+    printf("Saved in %s\n", PathToFile);
+    string Command("chmod a+x ");
 	Command = Command + "\"" + NameFile + "\"";
 	system(Command.c_str());
+    }
+    else {printf("ERROR: FullPath: %s Does not exist!",FullPath);}
+	
 	//execl("chmod", "a+x", command, NULL);
     free(NameFile);
 	
