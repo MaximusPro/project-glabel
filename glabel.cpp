@@ -215,7 +215,7 @@ int main(int argc, char* argv[])
 	else if(!strcmp("--version", argv[i]) || !strcmp("-v", argv[i]) || !strcmp("--v", argv[i])){return printf("version %s\n", VERSION);}
 	else if(!strcmp("-pf", argv[i])){PM.PathToFile = argv[i+1];}
     }
-    if(argc == 2){
+    if(argc == 2 || argc%2 == 0){
         printf("\033[31mError in current parameters!\n");
         printf("You should write like this: \33[32mglabel [prefix1] Argument1 [prefix2] Argement2 ...\33[0m\n");
         printf("\33[31mUse \33[32m\"\" \033[31mfor path or names!\033[0m\n");
