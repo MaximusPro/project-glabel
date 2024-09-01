@@ -174,13 +174,14 @@ int main(int argc, char* argv[])
         printf("\033[31mERROR: Unknown parameters for generating file!\nFor details used command --man\033[0m\n");
         return 1;
     }
-    else if(argc%2 == 0)
+    /*else if(argc%2 == 0 /*&& !(strcmp(argv[1],"--version") || strcmp(argv[1],"--man")) != 0)
     {
         printf("\033[31mError in current parameters!\n");
         printf("You should write like this: \33[32mglabel [prefix1] Argument1 [prefix2] Argement2 ...\33[0m\n");
         printf("\33[31mUse \33[32m\"\" \033[31mfor path or names!\033[0m\n");
         return 2;
     }
+    */
     Parameters Colors;
     Colors.Name = nullptr;
     Colors.Comment = nullptr;
@@ -211,8 +212,15 @@ int main(int argc, char* argv[])
         else if(!strcmp("-ca", argv[i])){PM.Categories = argv[i+1];}
         else if(!strcmp("-d", argv[i])){PM.NoDisplay = argv[i+1];}
         else if(!strcmp("--man", argv[i])){return manual();}
-	else if(!strcmp("--version", argv[i])){return printf("version %s\n", VERSION);}
+	else if(!strcmp("--version", argv[i]) || !strcmp("-v", argv[i]) || !strcmp("--v", argv[i])){return printf("version %s\n", VERSION);}
 	else if(!strcmp("-pf", argv[i])){PM.PathToFile = argv[i+1];}
+    }
+    if(argc == 2){
+        printf("\033[31mError in current parameters!\n");
+        printf("You should write like this: \33[32mglabel [prefix1] Argument1 [prefix2] Argement2 ...\33[0m\n");
+        printf("\33[31mUse \33[32m\"\" \033[31mfor path or names!\033[0m\n");
+        printf("\33[31mFor details used command: --man\033[0m\n");
+        return 2;
     }
     if(PM.Name == NULL){printf("\033[31mERROR: Unknown name!\033[0m\n");return -1;}
     else if(PM.Exec == NULL)
